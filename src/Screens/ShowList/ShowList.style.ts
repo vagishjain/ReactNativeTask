@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import colors from "../../Utils/colors";
+import colors from '../../Utils/colors';
 
 export default StyleSheet.create({
   container: {
@@ -8,20 +8,19 @@ export default StyleSheet.create({
   },
   productItemSeparator: {
     height: 5,
-    // backgroundColor: 'black',
   },
   header: {
     fontSize: 32,
     paddingLeft: 20,
     paddingVertical: 10,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
   footerContainer: {
     height: 50,
     borderTopWidth: 2,
+    marginBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    // alignContent: 'space-around',
     justifyContent: 'space-around',
   },
   filterTouchable: {
@@ -30,12 +29,12 @@ export default StyleSheet.create({
     margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'cyan',
   },
   filterText: {
     fontSize: 20,
   },
   textInputStyle: {
+    height: 50,
     borderRadius: 5,
     borderWidth: 2,
     paddingLeft: 20,

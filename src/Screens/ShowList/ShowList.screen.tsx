@@ -19,6 +19,7 @@ import screenNames from '../../Utils/screenNames';
 import {getSectionListDataFromSectionKey} from '../../Utils/helperFunctions';
 import colors from '../../Utils/colors';
 import {fetchProductList} from '../../Stores/actions/productList.action';
+import {useDebounce} from '../../Hooks/useDebounce';
 
 const progressViewOffset: number = 60;
 
@@ -38,6 +39,8 @@ const ShowListScreen = ({navigation}) => {
   const [filteredDataList, setFilteredDataList] = useState<ProductInterface[]>(
     [],
   );
+
+  const [debounce] = useDebounce(500);
 
   useEffect(() => {
     if (!productList?.length) {
@@ -77,6 +80,9 @@ const ShowListScreen = ({navigation}) => {
   };
 
   const dismissKeyboard = (): void => Keyboard.dismiss();
+
+  const toggleFilter = (): void =>
+    setIsFilterByType(isFilterByType => !isFilterByType);
 
   const onPressSearch = (): void => {
     if (isSearch) {
@@ -145,7 +151,7 @@ const ShowListScreen = ({navigation}) => {
       {productList?.length ? (
         <View style={Styles.footerContainer}>
           <TouchableOpacity
-            onPress={onPressSearch}
+            onPress={() => debounce(onPressSearch)}
             style={Styles.filterTouchable}>
             <Text
               style={[
@@ -156,7 +162,7 @@ const ShowListScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setIsFilterByType(isFilterByType => !isFilterByType)}
+            onPress={() => debounce(toggleFilter)}
             style={Styles.filterTouchable}>
             <Text
               style={[
