@@ -21,7 +21,11 @@ const AppNavigation = () => {
         <Stack.Screen
           name={ScreenConstants.SHOW_LIST_SCREEN}
           component={ShowListScreen}
-          options={{...commonStackOptions, title: 'Product List'}}
+          options={{
+            ...commonStackOptions,
+            title: 'Product List',
+            headerTitleAlign: 'left',
+          }}
         />
         <Stack.Screen
           name={ScreenConstants.PRODUCT_DETAILS_SCREEN}

@@ -18,7 +18,6 @@ export default StyleSheet.create({
   footerContainer: {
     height: 50,
     borderTopWidth: 2,
-    marginBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -26,7 +25,6 @@ export default StyleSheet.create({
   filterTouchable: {
     flex: 0.5,
     height: 50,
-    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },

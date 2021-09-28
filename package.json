@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "generate-android": "react-native run-android --variant=release",
     "ios": "react-native run-ios",
+    "iphone12": "react-native run-ios --simulator='iPhone 12' ",
     "start": "react-native start",
     "test": "jest -u",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
@@ -18,8 +19,10 @@
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-paper": "^4.9.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.7.2",
+    "react-native-vector-icons": "^8.1.0",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0"

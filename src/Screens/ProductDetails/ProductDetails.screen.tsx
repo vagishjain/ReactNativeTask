@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState, useLayoutEffect} from 'react';
 import {FlatList, Image, ScrollView, Text, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {
@@ -19,7 +19,7 @@ const ProductDetails = ({navigation, route}) => {
     productList.find((product: ProductInterface) => product.id == id),
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({title: productData.name});
   }, [navigation]);
 

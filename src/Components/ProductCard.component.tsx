@@ -23,9 +23,11 @@ const ProductCard: FC<ProductInterface> = ({
         />
       </View>
       <View style={styles.textContainer}>
-        <Text adjustsFontSizeToFit numberOfLines={2} style={styles.nameText}>
-          {name}
-        </Text>
+        <View style={styles.nameContainer}>
+          <Text adjustsFontSizeToFit numberOfLines={2} style={styles.nameText}>
+            {name}
+          </Text>
+        </View>
         <View style={styles.priceContainer}>
           {rating ? (
             <Text adjustsFontSizeToFit style={styles.priceText}>
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     borderRadius: 10,
     width: deviceWidth * 0.3,
-    height: deviceHeight * 0.15,
+    height: deviceHeight * 0.13,
   },
   textContainer: {
     justifyContent: 'center',
@@ -61,10 +63,12 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
   },
+  nameContainer: {
+    borderBottomWidth: 2,
+  },
   nameText: {
     fontSize: 20,
     fontWeight: 'bold',
-    borderBottomWidth: 2,
   },
   priceContainer: {
     flexDirection: 'row',
